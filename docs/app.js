@@ -11,10 +11,10 @@ const initialScore=r=>initialEdits[r.image_id]?.crimson??r.crimson;
 const score=r=>edits[r.image_id]?.crimson??r.crimson;
 const broodOrder=['E. incisa','F1 (line unresolved)','F2-1','F2-2','F2-3','F2-4','F2-5','BC-1','BC-2','BC-3'];
 $(trait+'Tab').classList.add('active');$('traitTitle').textContent=labels[trait];
-$('definition').textContent=trait==='crimson'?'Localized paired crimson patches at the repeated dorsal positions. Score faint patches as present, including those within orange-pink bands.':'Estimated percent orange-pink among classified tubercle pixels. Photos are ranked within each brood. Open any ranked photo to inspect the overlay.';
+$('definition').textContent=trait==='crimson'?'Localized paired crimson patches at the repeated dorsal positions. Score faint patches as present, including those within orange-pink bands.':'Photos are ranked by orange-pink coverage within each brood. Open a ranked photo to see the scored pixels.';
 for(const id of ['crimsonInfo','crimsonFilter','crimsonEditor','crimsonViewerNote','autosave']) $(id).hidden=tubercles;
 document.querySelector('.saveNote').hidden=tubercles;
-for(const id of ['scoliInfo','scoliSort','scoliDetails']) $(id).hidden=!tubercles;
+for(const id of ['scoliSort','scoliDetails']) $(id).hidden=!tubercles;
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
 function render(){const q=$('search').value.toLowerCase();const shown=data.filter(r=>(!$('brood').value||r.brood===$('brood').value)&&(tubercles||!$('state').value||initialScore(r)===$('state').value)&&(!q||(r.filename+' '+r.image_id).toLowerCase().includes(q)));
  visibleRows=shown;updateCounts();visibleCards.clear();
@@ -60,8 +60,6 @@ function renderTubercles(rows){
    meta.append(el('div','brood-label',row.brood));
    if(row.scoli_exclusion_reason){
     meta.append(el('p','note',row.scoli_exclusion_reason));
-   }else{
-    meta.append(el('div','coverage',`${row.scoli_orange_pink_percent}% orange-pink`));
    }
    card.append(button,meta);
    grid.append(card);
@@ -131,9 +129,8 @@ function open(r){
  $('saved').textContent='';
  if(tubercles){
   $('toggleMask').hidden=Boolean(r.scoli_exclusion_reason);
-  $('scoliMeasurement').textContent=r.scoli_exclusion_reason
-   ?`Excluded · ${r.scoli_exclusion_reason}`
-   :`${r.scoli_orange_pink_percent}% orange-pink · ${r.scoli_orange_pink_pixels} orange-pink pixels and ${r.scoli_yellow_green_pixels} yellow-green pixels`;
+  $('scoliExclusion').hidden=!r.scoli_exclusion_reason;
+  $('scoliExclusion').textContent=r.scoli_exclusion_reason ? `Excluded · ${r.scoli_exclusion_reason}` : '';
  }else{
   $('editCrimson').value=score(r);
  }

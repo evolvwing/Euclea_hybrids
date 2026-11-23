@@ -10,5 +10,4 @@
 .photo-stage{position:relative;min-width:0}
 #large{display:block}
 #mask{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;image-rendering:pixelated}
-.coverage{margin-top:8px;font-size:16px;font-weight:bold;color:#85394c}
 .brood-label{margin-top:6px;color:#506259}
