@@ -78,4 +78,4 @@ Visit `http://localhost:8000`. The build validates image IDs, states, and image 
 
 ## Publishing
 
-A GitHub Actions workflow deploys `docs/` to GitHub Pages on pushes to `main`. Set repository Settings → Pages → Source to **GitHub Actions**. The repository is intended to be public. No blanket reuse license is assigned to the photographs or dataset in this project.
+Run `python scripts/build.py` after updating scores or photos and commit the generated files. GitHub Actions verifies the committed scores and overlays before deploying `docs/` to GitHub Pages. Serving the committed measurements keeps the published ranking stable across runners. Set repository Settings → Pages → Source to **GitHub Actions**. The repository is intended to be public. No blanket reuse license is assigned to the photographs or dataset in this project.
