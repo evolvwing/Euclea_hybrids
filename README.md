@@ -2,7 +2,15 @@
 
 **[Open the interactive contact sheets](https://evolvwing.github.io/Euclea_hybrids/)**
 
-Larval color phenotyping in *Euclea incisa*, *E. incisa × E. delphinii* F1 hybrids, F2 broods, and backcrosses. Includes 474 cropped photographs, editable contact sheets, phenotype calls, and reproducible segregation analyses.
+Larval color phenotyping in *Euclea incisa*, *E. incisa × E. delphinii* F1 hybrids, F2 broods, and backcrosses. Includes a developmental contact sheet with 317 F1 larval crops, plus 474 phenotype-review photographs, phenotype calls, and reproducible segregation analyses.
+
+## F1 hybrid larvae (L1 to L8)
+
+The first contact sheet documents larvae of *E. incisa* × *E. delphinii* from instars L1 through L8. Photographs are grouped by instar, with a filter for L1 through L8. Counts refer to image views. The same larva may appear in multiple frames.
+
+The 3:5 crops are bundled as web-sized WebP files in `docs/instar-assets/`. White vertical scale bars are retained on crops calibrated against a ruler in the original photograph. `docs/instars.json` records the original crop filename and instar.
+
+Use **Exclude** to mark a photo for review and hide it after reload. **Show excluded** reveals these photos and provides a **Restore** button. Edits are browser-local. **Export current CSV** includes all instar records and their current exclusion flags.
 
 ## Authoritative data
 

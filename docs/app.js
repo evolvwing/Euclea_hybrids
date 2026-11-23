@@ -1,39 +1,52 @@
 const $=id=>document.getElementById(id);
 const requestedTrait=new URLSearchParams(location.search).get('trait');
-const trait=['dorsal','scoli'].includes(requestedTrait)?'dorsal':'crimson';
+const trait=['dorsal','scoli'].includes(requestedTrait)?'dorsal':requestedTrait==='crimson'?'crimson':'instars';
 const dorsalLines=trait==='dorsal';
-const labels={crimson:'Larval dorsal crimson patches',dorsal:'Larval dorsal orange lines'};
+const instars=trait==='instars';
+const labels={instars:'F1 hybrid larvae (L1 to L8)',crimson:'Larval dorsal crimson patches',dorsal:'Larval dorsal orange lines'};
 const states={'0':'Absent','1':'Present','A':'Ambiguous'};
 const key='euclea-larvae-reviewed-20261122-v1';let edits={};try{edits=JSON.parse(localStorage.getItem(key)||'{}')}catch{}
 const initialEdits=JSON.parse(JSON.stringify(edits));
 const dorsalReviewKey='euclea-dorsal-review-v1';
 const crimsonReviewKey='euclea-crimson-exclusions-v1';
-function readReviewDraft(storageKey){
+const instarReviewKey='euclea-f1-instar-exclusions-v1';
+function readReviewDraft(storageKey,idPattern=/^euclea-\d{3}$/){
  const draft=new Map();
  try{
   for(const [id,excluded] of Object.entries(JSON.parse(localStorage.getItem(storageKey)||'{}'))){
-   if(/^euclea-\d{3}$/.test(id)&&typeof excluded==='boolean')draft.set(id,excluded);
+   if(idPattern.test(id)&&typeof excluded==='boolean')draft.set(id,excluded);
   }
  }catch{}
  return draft;
 }
 const reviewDraft=readReviewDraft(dorsalReviewKey);
 const crimsonReviewDraft=readReviewDraft(crimsonReviewKey);
-let crimsonExclusionsOnLoad=new Set();
+const instarReviewDraft=readReviewDraft(instarReviewKey,/^L[1-8]_DSC_\d+_larva\d+$/);
+const exclusionsOnLoad=new Set();
 let data=[],selected=null,visibleRows=[];
 const visibleCards=new Map();
 const initialScore=r=>initialEdits[r.image_id]?.crimson??r.crimson;
 const score=r=>edits[r.image_id]?.crimson??r.crimson;
 const broodOrder=['E. incisa','F1 (line unresolved)','F2-1','F2-2','F2-3','F2-4','F2-5','BC-1','BC-2','BC-3'];
-$(trait+'Tab').classList.add('active');$('traitTitle').textContent=labels[trait];
-$('definition').textContent=trait==='crimson'?'Localized paired crimson patches at the repeated dorsal positions. Score faint patches as present, including those within orange-pink bands.':'Photos are ranked by orange-pink coverage within each brood. Open a ranked photo to see the scored pixels.';
-for(const id of ['crimsonInfo','crimsonFilter','crimsonExcludedFilter','crimsonEditor','crimsonViewerNote','autosave']) $(id).hidden=dorsalLines;
-document.querySelector('.saveNote').hidden=dorsalLines;
+$(trait+'Tab').classList.add('active');$(trait+'Tab').setAttribute('aria-current','page');$('traitTitle').textContent=labels[trait];
+const definition=$('definition');
+if(instars){
+ definition.append(el('i','','E. incisa'),' × ',el('i','','E. delphinii'),
+  ' F1 larvae, grouped by instar. Some larvae may appear in more than one photograph.');
+}else{
+ definition.textContent=trait==='crimson'?'Localized paired crimson patches at the repeated dorsal positions. Score faint patches as present, including those within orange-pink bands.':'Photos are ranked by orange-pink coverage within each brood. Open a ranked photo to see the scored pixels.';
+}
+for(const id of ['crimsonInfo','crimsonFilter','crimsonEditor','crimsonViewerNote']) $(id).hidden=trait!=='crimson';
+for(const id of ['crimsonExcludedFilter','autosave']) $(id).hidden=dorsalLines;
+$('instarFilter').hidden=!instars;
+$('instarReviewNotice').hidden=!instars;
+$('baselineDownload').hidden=instars;
+document.querySelector('.saveNote').hidden=trait!=='crimson';
 for(const id of ['dorsalSort','dorsalDetails','dorsalReviewNotice']) $(id).hidden=!dorsalLines;
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
-function render(){const q=$('search').value.toLowerCase();const matching=data.filter(r=>(!$('brood').value||r.brood===$('brood').value)&&(dorsalLines||!$('state').value||initialScore(r)===$('state').value)&&(!q||(r.filename+' '+r.image_id).toLowerCase().includes(q)));
+function render(){if(instars){renderInstars();return;}const q=$('search').value.toLowerCase();const matching=data.filter(r=>(!$('brood').value||r.brood===$('brood').value)&&(dorsalLines||!$('state').value||initialScore(r)===$('state').value)&&(!q||(r.filename+' '+r.image_id).toLowerCase().includes(q)));
  const shown=dorsalLines||$('showCrimsonExcluded').checked
-  ? matching : matching.filter(row=>!crimsonExclusionsOnLoad.has(row.image_id));
+  ? matching : matching.filter(row=>!exclusionsOnLoad.has(row.image_id));
  visibleRows=shown;updateCounts();visibleCards.clear();
  $('gallery').replaceChildren();
  if(dorsalLines){renderDorsalLines(shown);return;}
@@ -44,6 +57,11 @@ function render(){const q=$('search').value.toLowerCase();const matching=data.fi
  for(const value of ['0','1','A']){const button=el('button','statebutton',value==='A'?'Ambiguous':value);button.type='button';button.setAttribute('aria-label',`${states[value]}: ${r.filename}`);button.dataset.state=value;button.setAttribute('aria-pressed',String(score(r)===value));button.title=states[value];button.onclick=()=>{edits[r.image_id]={crimson:value};const ok=persist();updateCard(r);updateCounts();$('autosave').textContent=ok?`${r.filename}: ${states[value]} — saved in this browser.`:'Browser storage unavailable. Export the CSV now to retain your edits.';};buttons.append(button)}meta.append(buttons,reviewButton(r));card.append(meta);grid.append(card);visibleCards.set(r.image_id,{stateBadge,editedBadge,buttons});updateCard(r)}section.append(grid)}$('gallery').append(section)}
 }
 function updateCounts(){
+ if(instars){
+  const included=visibleRows.filter(row=>!instarExcluded(row)).length;
+  $('stats').textContent=`${included} image views · ${data.filter(instarExcluded).length} excluded overall`;
+  return;
+ }
  if(dorsalLines){
   const excluded=visibleRows.filter(r=>r.dorsal_exclusion_reason||reviewExcluded(r)).length;
   $('stats').textContent=`${visibleRows.length-excluded} ranked · ${excluded} excluded`;
@@ -60,6 +78,8 @@ const reviewExcluded=row=>reviewDraft.get(row.image_id)??publishedExclusion(row)
 const excludedOnLoad=row=>Boolean(row.dorsal_exclusion_reason)||publishedExclusion(row);
 const publishedCrimsonExclusion=row=>row.crimson_review_excluded==='yes';
 const crimsonExcluded=row=>crimsonReviewDraft.get(row.image_id)??publishedCrimsonExclusion(row);
+const publishedInstarExclusion=row=>row.instar_review_excluded==='yes';
+const instarExcluded=row=>instarReviewDraft.get(row.image_id)??publishedInstarExclusion(row);
 
 function storeReviewDraft(storageKey=dorsalReviewKey,draft=reviewDraft){
  try{
@@ -76,10 +96,10 @@ function updateReviewStatus(message=''){
 }
 
 function reviewButton(row){
- const draft=dorsalLines?reviewDraft:crimsonReviewDraft;
- const storageKey=dorsalLines?dorsalReviewKey:crimsonReviewKey;
- const savedExclusion=dorsalLines?publishedExclusion:publishedCrimsonExclusion;
- const currentExclusion=dorsalLines?reviewExcluded:crimsonExcluded;
+ const draft=instars?instarReviewDraft:dorsalLines?reviewDraft:crimsonReviewDraft;
+ const storageKey=instars?instarReviewKey:dorsalLines?dorsalReviewKey:crimsonReviewKey;
+ const savedExclusion=instars?publishedInstarExclusion:dorsalLines?publishedExclusion:publishedCrimsonExclusion;
+ const currentExclusion=instars?instarExcluded:dorsalLines?reviewExcluded:crimsonExcluded;
  const control=el('button','dorsal-review-button');
  control.type='button';
  control.disabled=dorsalLines&&Boolean(row.dorsal_exclusion_reason);
@@ -104,6 +124,42 @@ function reviewButton(row){
    : storageError;
  };
  return control;
+}
+
+const imagePath=row=>instars?`instar-assets/${row.image_id}.webp`:`assets/${row.image_id}.jpg`;
+
+function renderInstars(){
+ const stage=$('instar').value,query=$('search').value.trim().toLowerCase();
+ const showExcluded=$('showCrimsonExcluded').checked;
+ visibleRows=data.filter(row=>
+  (!stage||String(row.instar)===stage)&&(!query||row.filename.toLowerCase().includes(query))&&
+  (showExcluded||!exclusionsOnLoad.has(row.image_id)));
+ updateCounts();
+ $('gallery').replaceChildren();
+ for(const instar of new Set(visibleRows.map(row=>row.instar))){
+  const rows=visibleRows.filter(row=>row.instar===instar);
+  const section=el('section','group');
+  section.append(el('h2','',`L${instar} · ${rows.length} image views`));
+  const grid=el('div','grid');
+  for(const row of rows){
+   const card=el('article','card'),button=el('button','photo');
+   button.type='button';
+   button.setAttribute('aria-label',`View ${row.filename}`);
+   const img=el('img');
+   img.src=imagePath(row);
+   img.alt=`L${instar} F1 hybrid larva, ${row.filename}`;
+   img.loading='lazy';
+   button.append(img);
+   button.onclick=()=>open(row);
+   const meta=el('div','meta',row.filename);
+   meta.append(reviewButton(row));
+   card.append(button,meta);
+   grid.append(card);
+  }
+  section.append(grid);
+  $('gallery').append(section);
+ }
+ if(!visibleRows.length)$('gallery').append(el('p','note','No photographs match these filters.'));
 }
 
 function renderDorsalLines(rows){
@@ -209,18 +265,18 @@ function open(r){
  overlayRequest++;
  setOverlayVisible(false);
  $('maskStatus').textContent='';
- $('large').src=`assets/${r.image_id}.jpg`;
+ $('large').src=imagePath(r);
  $('displayImage').href=$('large').getAttribute('src');
  $('viewName').textContent=r.filename;
- $('viewBrood').textContent=r.brood;
- $('ref').textContent=r.reference_note;
+ $('viewBrood').textContent=instars?`L${r.instar}`:r.brood;
+ $('ref').textContent=r.reference_note??'';
  $('saved').textContent='';
  if(dorsalLines){
   $('toggleMask').hidden=Boolean(r.dorsal_exclusion_reason);
   const reason=r.dorsal_exclusion_reason||(reviewExcluded(r)?'Marked in review':'');
   $('dorsalExclusion').hidden=!reason;
   $('dorsalExclusion').textContent=reason?`Excluded · ${reason}`:'';
- }else{
+ }else if(!instars){
   $('editCrimson').value=score(r);
  }
  $('viewer').showModal();
@@ -229,14 +285,24 @@ $('close').onclick=()=>$('viewer').close();
 function persist(){try{localStorage.setItem(key,JSON.stringify(edits));return true}catch{$('saved').textContent='Browser storage unavailable. Export the CSV now to retain these edits.';$('autosave').textContent=$('saved').textContent;return false}}
 $('save').onclick=()=>{edits[selected.image_id]={crimson:$('editCrimson').value};if(persist())$('saved').textContent='Saved in this browser. Export CSV to share.';updateCard(selected);updateCounts()};
 $('restore').onclick=()=>{delete edits[selected.image_id];persist();$('editCrimson').value=selected.crimson;$('saved').textContent='Original draft scores restored.';updateCard(selected);updateCounts()};
-for(const id of ['brood','state','sort','search','showCrimsonExcluded'])$(id).addEventListener('input',render);
-$('export').onclick=()=>{const rows=data.map(r=>{const x={...r,dorsal_review_excluded:reviewExcluded(r)?'yes':'',crimson_review_excluded:crimsonExcluded(r)?'yes':''};x.crimson=score(r);x.crimson_state=x.crimson==='A'?'':x.crimson;if(edits[r.image_id]?.crimson!==undefined)x.crimson_status=x.crimson==='A'?'ambiguous':'user_reviewed';return x});const keys=Object.keys(rows[0]);const esc=v=>'"'+String(v??'').replaceAll('"','""')+'"';const csv=[keys.map(esc).join(','),...rows.map(r=>keys.map(k=>esc(r[k])).join(','))].join('\r\n');const u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=el('a');a.href=u;a.download='larval_color_scores_reviewed.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
-const dataUrl=reviewDraft.size||crimsonReviewDraft.size?`data.json?review=${Date.now()}`:'data.json?v=5c718f7654a0';
+for(const id of ['brood','instar','state','sort','search','showCrimsonExcluded'])$(id).addEventListener('input',render);
+$('export').onclick=()=>{if(!data.length)return;const rows=instars?data.map(r=>({...r,instar_review_excluded:instarExcluded(r)?'yes':''})):data.map(r=>{const x={...r,dorsal_review_excluded:reviewExcluded(r)?'yes':'',crimson_review_excluded:crimsonExcluded(r)?'yes':''};x.crimson=score(r);x.crimson_state=x.crimson==='A'?'':x.crimson;if(edits[r.image_id]?.crimson!==undefined)x.crimson_status=x.crimson==='A'?'ambiguous':'user_reviewed';return x});const keys=Object.keys(rows[0]);const esc=v=>'"'+String(v??'').replaceAll('"','""')+'"';const csv=[keys.map(esc).join(','),...rows.map(r=>keys.map(k=>esc(r[k])).join(','))].join('\r\n');const u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=el('a');a.href=u;a.download=instars?'f1_larval_instars_reviewed.csv':'larval_color_scores_reviewed.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
+const dataUrl=instars?'instars.json':reviewDraft.size||crimsonReviewDraft.size?`data.json?review=${Date.now()}`:'data.json?v=5c718f7654a0';
 fetch(dataUrl,{cache:'no-cache'}).then(response=>{
  if(!response.ok)throw Error('Data could not be loaded');
  return response.json();
 }).then(rows=>{
  data=rows;
+ if(instars){
+  for(const row of rows){
+   if(instarReviewDraft.get(row.image_id)===publishedInstarExclusion(row))instarReviewDraft.delete(row.image_id);
+   if(instarExcluded(row))exclusionsOnLoad.add(row.image_id);
+  }
+  $('broodFilter').hidden=true;
+  for(const stage of new Set(rows.map(row=>row.instar)))$('instar').add(new Option(`L${stage}`,stage));
+  render();
+  return;
+ }
  const reviewable=new Map(rows.filter(row=>!row.dorsal_exclusion_reason).map(row=>[row.image_id,row]));
  for(const [id,excluded] of reviewDraft){
   const row=reviewable.get(id);
@@ -245,7 +311,7 @@ fetch(dataUrl,{cache:'no-cache'}).then(response=>{
  storeReviewDraft();
  for(const row of rows){
   if(crimsonReviewDraft.get(row.image_id)===publishedCrimsonExclusion(row))crimsonReviewDraft.delete(row.image_id);
-  if(crimsonExcluded(row))crimsonExclusionsOnLoad.add(row.image_id);
+  if(crimsonExcluded(row))exclusionsOnLoad.add(row.image_id);
  }
  storeReviewDraft(crimsonReviewKey,crimsonReviewDraft);
  updateReviewStatus();

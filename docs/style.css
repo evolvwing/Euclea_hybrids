@@ -18,3 +18,5 @@
 
 #crimsonExcludedFilter{display:flex;flex-direction:row;align-items:center;min-height:44px;font-weight:normal}
 #crimsonExcludedFilter input{margin:0;accent-color:#205647}
+
+nav{flex-wrap:wrap}
