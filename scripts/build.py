@@ -5,6 +5,7 @@ from struct import iter_unpack
 from pathlib import Path
 from collections import Counter
 from scipy.stats import chisquare
+from apply_dorsal_review import FIELD as REVIEW_FIELD
 from quantify_dorsal_lines import BATCH_SIZE, HEIGHT, MASK_RUN, MEASUREMENT_FIELDS, WIDTH, quantify
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
@@ -20,6 +21,7 @@ for row in rows:
 assert len(rows) == len({r['image_id'] for r in rows}), 'Duplicate image IDs'
 for r in rows:
     assert r['crimson'] in ('0','1','A') and r['scoli_previously_ambiguous'] in ('','yes')
+    assert r.get(REVIEW_FIELD, '') in ('', 'yes')
     assert (ROOT/'docs/assets'/f"{r['image_id']}.jpg").is_file()
 docs = ROOT/'docs'
 if args.check:
@@ -42,6 +44,7 @@ if args.check:
         assert all(record[k] == v for k, v in baseline.items() if k not in MEASUREMENT_FIELDS), (
             f'Published baseline differs for {baseline["image_id"]}'
         )
+        assert baseline.get(REVIEW_FIELD, '') == record.get(REVIEW_FIELD, '')
         image_id = record['image_id']
         if record['dorsal_exclusion_reason']:
             assert image_id not in masks

@@ -11,3 +11,8 @@
 #large{display:block}
 #mask{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;image-rendering:pixelated}
 .brood-label{margin-top:6px;color:#506259}
+
+.dorsal-review-button{display:block;width:100%;margin-top:9px;padding:6px 8px;font-size:13px}
+.dorsal-review-button[data-excluded="true"]{background:#eee0e4;border-color:#c7a4ae;color:#713047}
+.dorsal-review-button:disabled,#saveDorsalReview:disabled{cursor:default;opacity:.65}
+#saveDorsalReview:not(:disabled){background:#205647;color:white;border-color:#205647}

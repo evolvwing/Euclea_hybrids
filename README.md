@@ -32,6 +32,10 @@ On a 300 × 500 pixel crop, the pipeline traces two warm longitudinal stripes an
 
 All images are reanalyzed, including those excluded from the previous tubercle analysis. The **Excluded** section holds images with insufficient evidence for a pair of continuous stripes, a visible yellow midline, or enough classified pixels on both sides. The pilot used visually placed guide points. The published pipeline estimates all three traces automatically. The overlays have been visually spot-checked. Pose, lighting, overlapping larvae, and indistinct stripes can affect the automatic traces.
 
+### Review dorsal exclusions
+
+Use **Exclude** or **Restore** on scored photos. The gallery keeps your place and stores draft changes in your browser. **Save to GitHub** opens a prefilled review request. Submit it as the repository owner to update the reviewed CSV, the published CSV, and the gallery. Reload the page after Pages finishes publishing. Manually excluded photos retain their measured scores and overlays for review.
+
 ## Dorsal crimson patch segregation
 
 Counts and ratios are **present : absent**. Ambiguous records are excluded from tests.
