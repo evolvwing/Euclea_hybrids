@@ -12,7 +12,7 @@ Each F2 and BC image represents one unique larva, as confirmed by the user. Pare
 
 ## Review photographs
 
-On the crimson tab, browse images grouped by brood and state. Each card has **0 (absent)**, **1 (present)**, and **Ambiguous** buttons. A click saves locally and updates the selected state without moving images. Images regroup after refreshing. Export CSV to retain and share new edits.
+On the crimson tab, browse images grouped by brood and state. Each card has **0 (absent)**, **1 (present)**, and **Ambiguous** buttons. A click saves locally and updates the selected state without moving images. Images regroup after refreshing. Use **Exclude** to hide a photo from the crimson contact sheet on reload. Turn on **Show excluded** to review or restore it. Export CSV to retain and share new edits, including the `crimson_review_excluded` flag.
 
 **Autosave is browser-local:** it does not commit to GitHub, synchronize devices, or update the repository CSV. The GitHub Pages site uses a separate storage key from the earlier review site. The uploaded CSV is already incorporated as its baseline.
 

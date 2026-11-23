@@ -6,13 +6,20 @@ const labels={crimson:'Larval dorsal crimson patches',dorsal:'Larval dorsal oran
 const states={'0':'Absent','1':'Present','A':'Ambiguous'};
 const key='euclea-larvae-reviewed-20261122-v1';let edits={};try{edits=JSON.parse(localStorage.getItem(key)||'{}')}catch{}
 const initialEdits=JSON.parse(JSON.stringify(edits));
-const reviewKey='euclea-dorsal-review-v1';
-const reviewDraft=new Map();
-try{
- for(const [id,excluded] of Object.entries(JSON.parse(localStorage.getItem(reviewKey)||'{}'))){
-  if(/^euclea-\d{3}$/.test(id)&&typeof excluded==='boolean')reviewDraft.set(id,excluded);
- }
-}catch{}
+const dorsalReviewKey='euclea-dorsal-review-v1';
+const crimsonReviewKey='euclea-crimson-exclusions-v1';
+function readReviewDraft(storageKey){
+ const draft=new Map();
+ try{
+  for(const [id,excluded] of Object.entries(JSON.parse(localStorage.getItem(storageKey)||'{}'))){
+   if(/^euclea-\d{3}$/.test(id)&&typeof excluded==='boolean')draft.set(id,excluded);
+  }
+ }catch{}
+ return draft;
+}
+const reviewDraft=readReviewDraft(dorsalReviewKey);
+const crimsonReviewDraft=readReviewDraft(crimsonReviewKey);
+let crimsonExclusionsOnLoad=new Set();
 let data=[],selected=null,visibleRows=[];
 const visibleCards=new Map();
 const initialScore=r=>initialEdits[r.image_id]?.crimson??r.crimson;
@@ -20,11 +27,13 @@ const score=r=>edits[r.image_id]?.crimson??r.crimson;
 const broodOrder=['E. incisa','F1 (line unresolved)','F2-1','F2-2','F2-3','F2-4','F2-5','BC-1','BC-2','BC-3'];
 $(trait+'Tab').classList.add('active');$('traitTitle').textContent=labels[trait];
 $('definition').textContent=trait==='crimson'?'Localized paired crimson patches at the repeated dorsal positions. Score faint patches as present, including those within orange-pink bands.':'Photos are ranked by orange-pink coverage within each brood. Open a ranked photo to see the scored pixels.';
-for(const id of ['crimsonInfo','crimsonFilter','crimsonEditor','crimsonViewerNote','autosave']) $(id).hidden=dorsalLines;
+for(const id of ['crimsonInfo','crimsonFilter','crimsonExcludedFilter','crimsonEditor','crimsonViewerNote','autosave']) $(id).hidden=dorsalLines;
 document.querySelector('.saveNote').hidden=dorsalLines;
 for(const id of ['dorsalSort','dorsalDetails','dorsalReviewNotice']) $(id).hidden=!dorsalLines;
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
-function render(){const q=$('search').value.toLowerCase();const shown=data.filter(r=>(!$('brood').value||r.brood===$('brood').value)&&(dorsalLines||!$('state').value||initialScore(r)===$('state').value)&&(!q||(r.filename+' '+r.image_id).toLowerCase().includes(q)));
+function render(){const q=$('search').value.toLowerCase();const matching=data.filter(r=>(!$('brood').value||r.brood===$('brood').value)&&(dorsalLines||!$('state').value||initialScore(r)===$('state').value)&&(!q||(r.filename+' '+r.image_id).toLowerCase().includes(q)));
+ const shown=dorsalLines||$('showCrimsonExcluded').checked
+  ? matching : matching.filter(row=>!crimsonExclusionsOnLoad.has(row.image_id));
  visibleRows=shown;updateCounts();visibleCards.clear();
  $('gallery').replaceChildren();
  if(dorsalLines){renderDorsalLines(shown);return;}
@@ -32,7 +41,7 @@ function render(){const q=$('search').value.toLowerCase();const shown=data.filte
  for(const state of ['0','1','A']){const group=members.filter(r=>initialScore(r)===state).sort((a,b)=>a.filename.localeCompare(b.filename));if(!group.length)continue;
  section.append(el('h3','stateheading',`${state} · ${states[state]} — ${group.length} image views`));const grid=el('div','grid');
  for(const r of group){const card=el('article','card'),b=el('button','photo');b.setAttribute('aria-label','Review '+r.filename);const im=el('img');im.src=`assets/${r.image_id}.jpg`;im.alt=r.filename;im.loading='lazy';b.append(im);b.onclick=()=>open(r);card.append(b);const meta=el('div','meta',r.filename);const badges=el('div','badges');const stateBadge=el('span','badge'),editedBadge=el('span','badge editedbadge','Edited');badges.append(stateBadge,editedBadge);meta.append(badges);if(r.reference_note)meta.append(el('div','refmark','User reference'));const buttons=el('div','statebuttons');buttons.setAttribute('role','group');buttons.setAttribute('aria-label',labels[trait]+' for '+r.filename);
- for(const value of ['0','1','A']){const button=el('button','statebutton',value==='A'?'Ambiguous':value);button.type='button';button.setAttribute('aria-label',`${states[value]}: ${r.filename}`);button.dataset.state=value;button.setAttribute('aria-pressed',String(score(r)===value));button.title=states[value];button.onclick=()=>{edits[r.image_id]={crimson:value};const ok=persist();updateCard(r);updateCounts();$('autosave').textContent=ok?`${r.filename}: ${states[value]} — saved in this browser.`:'Browser storage unavailable. Export the CSV now to retain your edits.';};buttons.append(button)}meta.append(buttons);card.append(meta);grid.append(card);visibleCards.set(r.image_id,{stateBadge,editedBadge,buttons});updateCard(r)}section.append(grid)}$('gallery').append(section)}
+ for(const value of ['0','1','A']){const button=el('button','statebutton',value==='A'?'Ambiguous':value);button.type='button';button.setAttribute('aria-label',`${states[value]}: ${r.filename}`);button.dataset.state=value;button.setAttribute('aria-pressed',String(score(r)===value));button.title=states[value];button.onclick=()=>{edits[r.image_id]={crimson:value};const ok=persist();updateCard(r);updateCounts();$('autosave').textContent=ok?`${r.filename}: ${states[value]} — saved in this browser.`:'Browser storage unavailable. Export the CSV now to retain your edits.';};buttons.append(button)}meta.append(buttons,reviewButton(r));card.append(meta);grid.append(card);visibleCards.set(r.image_id,{stateBadge,editedBadge,buttons});updateCard(r)}section.append(grid)}$('gallery').append(section)}
 }
 function updateCounts(){
  if(dorsalLines){
@@ -40,15 +49,21 @@ function updateCounts(){
   $('stats').textContent=`${visibleRows.length-excluded} ranked · ${excluded} excluded`;
   return;
  }
- const counts=Object.fromEntries(['0','1','A'].map(s=>[s,visibleRows.filter(r=>score(r)===s).length]));$('stats').textContent=`${visibleRows.length} image views · ${counts['0']} absent · ${counts['1']} present · ${counts.A} ambiguous`}
+ const included=visibleRows.filter(row=>!crimsonExcluded(row));
+ const counts=Object.fromEntries(['0','1','A'].map(s=>[s,included.filter(r=>score(r)===s).length]));
+ const excluded=data.filter(crimsonExcluded).length;
+ $('stats').textContent=`${included.length} image views · ${counts['0']} absent · ${counts['1']} present · ${counts.A} ambiguous · ${excluded} excluded overall`;
+}
 function updateCard(r){const c=visibleCards.get(r.image_id);if(!c)return;const state=score(r);c.stateBadge.className='badge s'+state;c.stateBadge.textContent=`${state} · ${states[state]}`;c.editedBadge.style.visibility=edits[r.image_id]?.crimson!==undefined?'visible':'hidden';for(const b of c.buttons.children)b.setAttribute('aria-pressed',String(b.dataset.state===state))}
 const publishedExclusion=row=>row.dorsal_review_excluded==='yes';
 const reviewExcluded=row=>reviewDraft.get(row.image_id)??publishedExclusion(row);
 const excludedOnLoad=row=>Boolean(row.dorsal_exclusion_reason)||publishedExclusion(row);
+const publishedCrimsonExclusion=row=>row.crimson_review_excluded==='yes';
+const crimsonExcluded=row=>crimsonReviewDraft.get(row.image_id)??publishedCrimsonExclusion(row);
 
-function storeReviewDraft(){
+function storeReviewDraft(storageKey=dorsalReviewKey,draft=reviewDraft){
  try{
-  localStorage.setItem(reviewKey,JSON.stringify(Object.fromEntries(reviewDraft)));
+  localStorage.setItem(storageKey,JSON.stringify(Object.fromEntries(draft)));
   return true;
  }catch{return false;}
 }
@@ -61,24 +76,32 @@ function updateReviewStatus(message=''){
 }
 
 function reviewButton(row){
+ const draft=dorsalLines?reviewDraft:crimsonReviewDraft;
+ const storageKey=dorsalLines?dorsalReviewKey:crimsonReviewKey;
+ const savedExclusion=dorsalLines?publishedExclusion:publishedCrimsonExclusion;
+ const currentExclusion=dorsalLines?reviewExcluded:crimsonExcluded;
  const control=el('button','dorsal-review-button');
  control.type='button';
- control.disabled=Boolean(row.dorsal_exclusion_reason);
+ control.disabled=dorsalLines&&Boolean(row.dorsal_exclusion_reason);
  function refresh(){
-  const excluded=control.disabled||reviewExcluded(row);
+  const excluded=control.disabled||currentExclusion(row);
   control.textContent=control.disabled?'Excluded':excluded?'Restore':'Exclude';
   control.setAttribute('aria-label',`${control.textContent} ${row.filename}`);
   control.dataset.excluded=String(excluded);
  }
  refresh();
  control.onclick=()=>{
-  const next=!reviewExcluded(row);
-  if(next===publishedExclusion(row))reviewDraft.delete(row.image_id);
-  else reviewDraft.set(row.image_id,next);
-  const saved=storeReviewDraft();
+  const next=!currentExclusion(row);
+  if(next===savedExclusion(row))draft.delete(row.image_id);
+  else draft.set(row.image_id,next);
+  const saved=storeReviewDraft(storageKey,draft);
   refresh();
   updateCounts();
-  updateReviewStatus(saved?'':'Browser storage is unavailable. Export the CSV before leaving this page.');
+  const storageError='Browser storage is unavailable. Export the CSV before leaving this page.';
+  if(dorsalLines)updateReviewStatus(saved?'':storageError);
+  else $('autosave').textContent=saved
+   ? `${row.filename}: ${next?'excluded':'restored'} in this browser.`
+   : storageError;
  };
  return control;
 }
@@ -206,9 +229,9 @@ $('close').onclick=()=>$('viewer').close();
 function persist(){try{localStorage.setItem(key,JSON.stringify(edits));return true}catch{$('saved').textContent='Browser storage unavailable. Export the CSV now to retain these edits.';$('autosave').textContent=$('saved').textContent;return false}}
 $('save').onclick=()=>{edits[selected.image_id]={crimson:$('editCrimson').value};if(persist())$('saved').textContent='Saved in this browser. Export CSV to share.';updateCard(selected);updateCounts()};
 $('restore').onclick=()=>{delete edits[selected.image_id];persist();$('editCrimson').value=selected.crimson;$('saved').textContent='Original draft scores restored.';updateCard(selected);updateCounts()};
-for(const id of ['brood','state','sort','search'])$(id).addEventListener('input',render);
-$('export').onclick=()=>{const rows=data.map(r=>{const x={...r,dorsal_review_excluded:reviewExcluded(r)?'yes':''};x.crimson=score(r);x.crimson_state=x.crimson==='A'?'':x.crimson;if(edits[r.image_id]?.crimson!==undefined)x.crimson_status=x.crimson==='A'?'ambiguous':'user_reviewed';return x});const keys=Object.keys(rows[0]);const esc=v=>'"'+String(v??'').replaceAll('"','""')+'"';const csv=[keys.map(esc).join(','),...rows.map(r=>keys.map(k=>esc(r[k])).join(','))].join('\r\n');const u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=el('a');a.href=u;a.download='larval_color_scores_reviewed.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
-const dataUrl=reviewDraft.size?`data.json?review=${Date.now()}`:'data.json?v=review-clean-1';
+for(const id of ['brood','state','sort','search','showCrimsonExcluded'])$(id).addEventListener('input',render);
+$('export').onclick=()=>{const rows=data.map(r=>{const x={...r,dorsal_review_excluded:reviewExcluded(r)?'yes':'',crimson_review_excluded:crimsonExcluded(r)?'yes':''};x.crimson=score(r);x.crimson_state=x.crimson==='A'?'':x.crimson;if(edits[r.image_id]?.crimson!==undefined)x.crimson_status=x.crimson==='A'?'ambiguous':'user_reviewed';return x});const keys=Object.keys(rows[0]);const esc=v=>'"'+String(v??'').replaceAll('"','""')+'"';const csv=[keys.map(esc).join(','),...rows.map(r=>keys.map(k=>esc(r[k])).join(','))].join('\r\n');const u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=el('a');a.href=u;a.download='larval_color_scores_reviewed.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
+const dataUrl=reviewDraft.size||crimsonReviewDraft.size?`data.json?review=${Date.now()}`:'data.json?v=crimson-review-1';
 fetch(dataUrl,{cache:'no-cache'}).then(response=>{
  if(!response.ok)throw Error('Data could not be loaded');
  return response.json();
@@ -220,6 +243,11 @@ fetch(dataUrl,{cache:'no-cache'}).then(response=>{
   if(!row||excluded===publishedExclusion(row))reviewDraft.delete(id);
  }
  storeReviewDraft();
+ for(const row of rows){
+  if(crimsonReviewDraft.get(row.image_id)===publishedCrimsonExclusion(row))crimsonReviewDraft.delete(row.image_id);
+  if(crimsonExcluded(row))crimsonExclusionsOnLoad.add(row.image_id);
+ }
+ storeReviewDraft(crimsonReviewKey,crimsonReviewDraft);
  updateReviewStatus();
  for(const brood of broodOrder){
   if(data.some(row=>row.brood===brood)){
