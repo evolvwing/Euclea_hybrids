@@ -22,7 +22,7 @@ $(trait+'Tab').classList.add('active');$('traitTitle').textContent=labels[trait]
 $('definition').textContent=trait==='crimson'?'Localized paired crimson patches at the repeated dorsal positions. Score faint patches as present, including those within orange-pink bands.':'Photos are ranked by orange-pink coverage within each brood. Open a ranked photo to see the scored pixels.';
 for(const id of ['crimsonInfo','crimsonFilter','crimsonEditor','crimsonViewerNote','autosave']) $(id).hidden=dorsalLines;
 document.querySelector('.saveNote').hidden=dorsalLines;
-for(const id of ['dorsalSort','dorsalDetails','saveDorsalReview','dorsalReviewNotice']) $(id).hidden=!dorsalLines;
+for(const id of ['dorsalSort','dorsalDetails','dorsalReviewNotice']) $(id).hidden=!dorsalLines;
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
 function render(){const q=$('search').value.toLowerCase();const shown=data.filter(r=>(!$('brood').value||r.brood===$('brood').value)&&(dorsalLines||!$('state').value||initialScore(r)===$('state').value)&&(!q||(r.filename+' '+r.image_id).toLowerCase().includes(q)));
  visibleRows=shown;updateCounts();visibleCards.clear();
@@ -54,11 +54,10 @@ function storeReviewDraft(){
 }
 
 function updateReviewStatus(message=''){
- $('saveDorsalReview').disabled=!reviewDraft.size;
  const count=reviewDraft.size;
  $('dorsalReviewNotice').textContent=message||(count
-  ? `${count} unsaved ${count===1?'change':'changes'}. Save to GitHub to publish.`
-  : 'Photos stay in place while you review. Saving asks you to confirm on GitHub.');
+  ? `${count} local ${count===1?'change':'changes'}. Export the CSV to share your edits.`
+  : 'Photos stay in place while you review. Export the CSV to share your edits.');
 }
 
 function reviewButton(row){
@@ -79,23 +78,10 @@ function reviewButton(row){
   const saved=storeReviewDraft();
   refresh();
   updateCounts();
-  updateReviewStatus(saved?'':'Browser storage is unavailable. Save before leaving this page.');
+  updateReviewStatus(saved?'':'Browser storage is unavailable. Export the CSV before leaving this page.');
  };
  return control;
 }
-
-$('saveDorsalReview').onclick=()=>{
- if(!reviewDraft.size)return;
- const changes={exclude:[],restore:[]};
- for(const [id,excluded] of reviewDraft){
-  changes[excluded?'exclude':'restore'].push(Number(id.slice(7)));
- }
- const url=new URL('https://github.com/evolvwing/Euclea_Larvae/issues/new');
- url.searchParams.set('title','Save dorsal orange line exclusions');
- url.searchParams.set('body',JSON.stringify(changes));
- window.open(url.href,'_blank','noopener,noreferrer');
- updateReviewStatus('Submit the prefilled request on GitHub as the repository owner, then reload after it publishes.');
-};
 
 function renderDorsalLines(rows){
  const ranked=rows.filter(r=>!excludedOnLoad(r));
@@ -222,7 +208,7 @@ $('save').onclick=()=>{edits[selected.image_id]={crimson:$('editCrimson').value}
 $('restore').onclick=()=>{delete edits[selected.image_id];persist();$('editCrimson').value=selected.crimson;$('saved').textContent='Original draft scores restored.';updateCard(selected);updateCounts()};
 for(const id of ['brood','state','sort','search'])$(id).addEventListener('input',render);
 $('export').onclick=()=>{const rows=data.map(r=>{const x={...r,dorsal_review_excluded:reviewExcluded(r)?'yes':''};x.crimson=score(r);x.crimson_state=x.crimson==='A'?'':x.crimson;if(edits[r.image_id]?.crimson!==undefined)x.crimson_status=x.crimson==='A'?'ambiguous':'user_reviewed';return x});const keys=Object.keys(rows[0]);const esc=v=>'"'+String(v??'').replaceAll('"','""')+'"';const csv=[keys.map(esc).join(','),...rows.map(r=>keys.map(k=>esc(r[k])).join(','))].join('\r\n');const u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=el('a');a.href=u;a.download='larval_color_scores_reviewed.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
-const dataUrl=reviewDraft.size?`data.json?review=${Date.now()}`:'data.json?v=dorsal-review-1';
+const dataUrl=reviewDraft.size?`data.json?review=${Date.now()}`:'data.json?v=dorsal-manual-1';
 fetch(dataUrl,{cache:'no-cache'}).then(response=>{
  if(!response.ok)throw Error('Data could not be loaded');
  return response.json();

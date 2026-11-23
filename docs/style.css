@@ -14,5 +14,4 @@
 
 .dorsal-review-button{display:block;width:100%;margin-top:9px;padding:6px 8px;font-size:13px}
 .dorsal-review-button[data-excluded="true"]{background:#eee0e4;border-color:#c7a4ae;color:#713047}
-.dorsal-review-button:disabled,#saveDorsalReview:disabled{cursor:default;opacity:.65}
-#saveDorsalReview:not(:disabled){background:#205647;color:white;border-color:#205647}
+.dorsal-review-button:disabled{cursor:default;opacity:.65}

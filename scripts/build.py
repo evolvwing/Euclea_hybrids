@@ -5,9 +5,9 @@ from struct import iter_unpack
 from pathlib import Path
 from collections import Counter
 from scipy.stats import chisquare
-from apply_dorsal_review import FIELD as REVIEW_FIELD
 from quantify_dorsal_lines import BATCH_SIZE, HEIGHT, MASK_RUN, MEASUREMENT_FIELDS, WIDTH, quantify
 ROOT = Path(__file__).resolve().parents[1]
+REVIEW_FIELD = 'dorsal_review_excluded'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--check', action='store_true', help='Verify the published measurements without rerunning image analysis.')
 args = parser.parse_args()

@@ -34,7 +34,7 @@ All images are reanalyzed, including those excluded from the previous tubercle a
 
 ### Review dorsal exclusions
 
-Use **Exclude** or **Restore** on scored photos. The gallery keeps your place and stores draft changes in your browser. **Save to GitHub** opens a prefilled review request. Submit it as the repository owner to update the reviewed CSV, the published CSV, and the gallery. Reload the page after Pages finishes publishing. Manually excluded photos retain their measured scores and overlays for review.
+Use **Exclude** or **Restore** on scored photos. The gallery keeps your place and stores draft changes in your browser. Use **Export current CSV** to share edits. To publish them, update the `dorsal_review_excluded` column in the reviewed CSV and regenerate the gallery files. Manually excluded photos retain their measured scores and overlays for review.
 
 ## Dorsal crimson patch segregation
 
