@@ -11,7 +11,7 @@ const initialScore=r=>initialEdits[r.image_id]?.crimson??r.crimson;
 const score=r=>edits[r.image_id]?.crimson??r.crimson;
 const broodOrder=['E. incisa','F1 (line unresolved)','F2-1','F2-2','F2-3','F2-4','F2-5','BC-1','BC-2','BC-3'];
 $(trait+'Tab').classList.add('active');$('traitTitle').textContent=labels[trait];
-$('definition').textContent=trait==='crimson'?'Localized paired crimson patches at the repeated dorsal positions. Score faint patches as present, including those within orange-pink bands.':'Estimated percent orange-pink among classified tubercle pixels. Open any ranked photo to inspect the overlay.';
+$('definition').textContent=trait==='crimson'?'Localized paired crimson patches at the repeated dorsal positions. Score faint patches as present, including those within orange-pink bands.':'Estimated percent orange-pink among classified tubercle pixels. Photos are ranked within each brood. Open any ranked photo to inspect the overlay.';
 for(const id of ['crimsonInfo','crimsonFilter','crimsonEditor','crimsonViewerNote','autosave']) $(id).hidden=tubercles;
 document.querySelector('.saveNote').hidden=tubercles;
 for(const id of ['scoliInfo','scoliSort','scoliDetails']) $(id).hidden=!tubercles;
@@ -39,8 +39,9 @@ function renderTubercles(rows){
  const direction=$('sort').value==='asc'?1:-1;
  ranked.sort((a,b)=>direction*(Number(a.scoli_orange_pink_percent)-Number(b.scoli_orange_pink_percent))
   ||a.filename.localeCompare(b.filename));
- const excluded=rows.filter(r=>r.scoli_exclusion_reason);
- for(const [title,items] of [['Orange-pink coverage',ranked],['Excluded',excluded]]){
+ const groups=broodOrder.map(brood=>[brood,ranked.filter(row=>row.brood===brood)]);
+ groups.push(['Excluded',rows.filter(row=>row.scoli_exclusion_reason)]);
+ for(const [title,items] of groups){
   if(!items.length)continue;
   const section=el('section','group');
   section.append(el('h2','',title));
@@ -61,11 +62,6 @@ function renderTubercles(rows){
     meta.append(el('p','note',row.scoli_exclusion_reason));
    }else{
     meta.append(el('div','coverage',`${row.scoli_orange_pink_percent}% orange-pink`));
-    const track=el('div','coverage-scale');
-    const fill=el('span');
-    fill.style.width=`${row.scoli_orange_pink_percent}%`;
-    track.append(fill);
-    meta.append(track);
    }
    card.append(button,meta);
    grid.append(card);

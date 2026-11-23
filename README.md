@@ -19,7 +19,7 @@ On the crimson tab, browse images grouped by brood and state. Each card has **0 
 ## Traits and scoring
 
 - **Dorsal crimson patches:** paired patches at the recurring dorsal positions identified by the user. Faint patches count as present, including darker patches embedded within orange-pink bands. Exact segment numbering is not established here.
-- **Orange-pink tubercles (scoli):** estimated percentage of orange-pink pixels among the classified orange-pink and yellow-green pixels in projecting structures. Sort across images, filter by brood, and open a photo to inspect the pixels counted.
+- **Orange-pink tubercles (scoli):** estimated percentage of orange-pink pixels among the classified orange-pink and yellow-green pixels in projecting structures. Sort by coverage within each brood, and open a photo to inspect the pixels counted.
 - **Ambiguous (A):** relevant anatomy is blurred, obscured, or insufficiently visible. A clear positive can be recorded in a partial image.
 
 The `crimson` field uses 0, 1, or A. Its numeric state field is blank for ambiguous calls. Review-status fields retain provenance. A visible absence does not establish genotype or absence at later instars.
