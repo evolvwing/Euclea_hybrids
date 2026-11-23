@@ -6,7 +6,7 @@ Larval color phenotyping in *Euclea incisa*, *E. incisa × E. delphinii* F1 hybr
 
 ## Authoritative data
 
-`data/larval_color_scores_reviewed.csv` is the public edition of the reviewed CSV from 22 November 2026, including the updated F2 and BC dorsal crimson patch calls. This edition omits private source links and uses project-specific image IDs. It is the source for the website and analyses. The dorsal orange lines are quantified from the bundled photos.
+`data/larval_color_scores_reviewed.csv` is the public edition of the reviewed CSV from 23 November 2026, including the updated F2 and BC dorsal crimson patch calls. This edition omits private source links and uses project-specific image IDs. It is the source for the website and analyses. The dorsal orange lines are quantified from the bundled photos.
 
 Each F2 and BC image represents one unique larva, as confirmed by the user. Parental and F1 individual identities remain unresolved. The dataset includes 252 F2, 125 BC, 45 F1, and 52 parental image records. F2-6 and BC-4 are not represented.
 
@@ -42,10 +42,10 @@ Counts and ratios are **present : absent**. Ambiguous scores are excluded from t
 
 | Model | Cross | Present | Absent | Ambiguous excluded | Expected ratio | Pearson χ² (df = 1) | p |
 |---|---|---:|---:|---:|---:|---:|---:|
-| Single locus, complete dominance | F2 | 123 | 107 | 22 | 3:1 | 56.8174 | 4.782 × 10⁻¹⁴ |
-| Single locus, complete dominance | BC | 25 | 91 | 9 | 1:1 | 37.5517 | 8.902 × 10⁻¹⁰ |
-| Two loci, complementary dominance | F2 | 123 | 107 | 22 | 9:7 | 0.7180 | 0.3968 |
-| Two loci, complementary dominance | BC | 25 | 91 | 9 | 1:3 | 0.7356 | 0.3911 |
+| Single locus, complete dominance | F2 | 127 | 104 | 21 | 3:1 | 49.3867 | 2.102 × 10⁻¹² |
+| Single locus, complete dominance | BC | 29 | 87 | 9 | 1:1 | 29.0000 | 7.238 × 10⁻⁸ |
+| Two loci, complementary dominance | F2 | 127 | 104 | 21 | 9:7 | 0.1518 | 0.6968 |
+| Two loci, complementary dominance | BC | 29 | 87 | 9 | 1:3 | 0.0000 | 1.0000 |
 
 Pearson goodness-of-fit tests have no continuity correction. The two-locus model requires a dominant allele at both loci (A_B_), AaBb F1 parents, aabb backcross parents, and independent assortment. The data fit these expectations, but do not prove this mechanism. The two-locus hypothesis was considered after inspecting the observed counts; it is exploratory. Tests pool broods and assume independent segregation and representative sampling. Developmental expression, viability, and scoring can affect observed ratios.
 
