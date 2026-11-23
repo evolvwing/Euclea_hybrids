@@ -38,14 +38,14 @@ Use **Exclude** or **Restore** on scored photos. The gallery keeps your place an
 
 ## Dorsal crimson patch segregation
 
-Counts and ratios are **present : absent**. Ambiguous records are excluded from tests.
+Counts and ratios are **present : absent**. Ambiguous scores are excluded from tests. The crimson review exclusion flag controls visibility in the contact sheet.
 
 | Model | Cross | Present | Absent | Ambiguous excluded | Expected ratio | Pearson χ² (df = 1) | p |
 |---|---|---:|---:|---:|---:|---:|---:|
-| Single locus, complete dominance | F2 | 123 | 106 | 23 | 3:1 | 55.3493 | 1.009 × 10⁻¹³ |
-| Single locus, complete dominance | BC | 25 | 90 | 10 | 1:1 | 36.7391 | 1.350 × 10⁻⁹ |
-| Two loci, complementary dominance | F2 | 123 | 106 | 23 | 9:7 | 0.5995 | 0.4388 |
-| Two loci, complementary dominance | BC | 25 | 90 | 10 | 1:3 | 0.6522 | 0.4193 |
+| Single locus, complete dominance | F2 | 123 | 107 | 22 | 3:1 | 56.8174 | 4.782 × 10⁻¹⁴ |
+| Single locus, complete dominance | BC | 25 | 91 | 9 | 1:1 | 37.5517 | 8.902 × 10⁻¹⁰ |
+| Two loci, complementary dominance | F2 | 123 | 107 | 22 | 9:7 | 0.7180 | 0.3968 |
+| Two loci, complementary dominance | BC | 25 | 91 | 9 | 1:3 | 0.7356 | 0.3911 |
 
 Pearson goodness-of-fit tests have no continuity correction. The two-locus model requires a dominant allele at both loci (A_B_), AaBb F1 parents, aabb backcross parents, and independent assortment. The data fit these expectations, but do not prove this mechanism. The two-locus hypothesis was considered after inspecting the observed counts; it is exploratory. Tests pool broods and assume independent segregation and representative sampling. Developmental expression, viability, and scoring can affect observed ratios.
 

@@ -231,7 +231,7 @@ $('save').onclick=()=>{edits[selected.image_id]={crimson:$('editCrimson').value}
 $('restore').onclick=()=>{delete edits[selected.image_id];persist();$('editCrimson').value=selected.crimson;$('saved').textContent='Original draft scores restored.';updateCard(selected);updateCounts()};
 for(const id of ['brood','state','sort','search','showCrimsonExcluded'])$(id).addEventListener('input',render);
 $('export').onclick=()=>{const rows=data.map(r=>{const x={...r,dorsal_review_excluded:reviewExcluded(r)?'yes':'',crimson_review_excluded:crimsonExcluded(r)?'yes':''};x.crimson=score(r);x.crimson_state=x.crimson==='A'?'':x.crimson;if(edits[r.image_id]?.crimson!==undefined)x.crimson_status=x.crimson==='A'?'ambiguous':'user_reviewed';return x});const keys=Object.keys(rows[0]);const esc=v=>'"'+String(v??'').replaceAll('"','""')+'"';const csv=[keys.map(esc).join(','),...rows.map(r=>keys.map(k=>esc(r[k])).join(','))].join('\r\n');const u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=el('a');a.href=u;a.download='larval_color_scores_reviewed.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
-const dataUrl=reviewDraft.size||crimsonReviewDraft.size?`data.json?review=${Date.now()}`:'data.json?v=crimson-review-1';
+const dataUrl=reviewDraft.size||crimsonReviewDraft.size?`data.json?review=${Date.now()}`:'data.json?v=5c718f7654a0';
 fetch(dataUrl,{cache:'no-cache'}).then(response=>{
  if(!response.ok)throw Error('Data could not be loaded');
  return response.json();
