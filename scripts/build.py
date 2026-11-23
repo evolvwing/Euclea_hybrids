@@ -14,13 +14,9 @@ args = parser.parse_args()
 source = ROOT/'data/larval_color_scores_reviewed.csv'
 with source.open(newline='') as f:
     rows = list(csv.DictReader(f))
-for row in rows:
-    for key in ('scoli_orange_pink_percent', 'scoli_orange_pink_pixels',
-                'scoli_yellow_green_pixels', 'scoli_exclusion_reason'):
-        row.pop(key, None)
 assert len(rows) == len({r['image_id'] for r in rows}), 'Duplicate image IDs'
 for r in rows:
-    assert r['crimson'] in ('0','1','A') and r['scoli_previously_ambiguous'] in ('','yes')
+    assert r['crimson'] in ('0','1','A')
     assert r.get(REVIEW_FIELD, '') in ('', 'yes')
     assert (ROOT/'docs/assets'/f"{r['image_id']}.jpg").is_file()
 docs = ROOT/'docs'

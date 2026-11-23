@@ -6,7 +6,7 @@ Larval color phenotyping in *Euclea incisa*, *E. incisa × E. delphinii* F1 hybr
 
 ## Authoritative data
 
-`data/larval_color_scores_reviewed.csv` is the public edition of the reviewed CSV from 22 November 2026, including the updated F2 and BC dorsal crimson patch calls. This edition omits private source links and uses project-specific image IDs. It is the source for the website and analyses. The dorsal orange lines are quantified from the bundled photos. The legacy `scoli_previously_ambiguous` field records the previous tubercle review. The earlier provisional CSV is retained separately as `data/larval_color_scores_initial.csv`.
+`data/larval_color_scores_reviewed.csv` is the public edition of the reviewed CSV from 22 November 2026, including the updated F2 and BC dorsal crimson patch calls. This edition omits private source links and uses project-specific image IDs. It is the source for the website and analyses. The dorsal orange lines are quantified from the bundled photos.
 
 Each F2 and BC image represents one unique larva, as confirmed by the user. Parental and F1 individual identities remain unresolved. The dataset includes 252 F2, 125 BC, 45 F1, and 52 parental image records. F2-6 and BC-4 are not represented.
 
@@ -30,7 +30,7 @@ Legacy `analysis_include=0` and blank `individual_id` columns are preserved from
 
 On a 300 × 500 pixel crop, the pipeline traces two warm longitudinal stripes and follows the narrow yellow ridge between them. It counts orange-pink and yellow-green pixels in narrow bands centered on the flanking stripes, omitting the ends where the stripes turn into projections. Hue, saturation, brightness and channel contrast determine the color classes. The score is the orange-pink count divided by the sum of both color counts. The export includes both counts and the resulting percentage.
 
-All images are reanalyzed, including those excluded from the previous tubercle analysis. The **Excluded** section holds images with insufficient evidence for a pair of continuous stripes, a visible yellow midline, or enough classified pixels on both sides. The pilot used visually placed guide points. The published pipeline estimates all three traces automatically. The overlays have been visually spot-checked. Pose, lighting, overlapping larvae, and indistinct stripes can affect the automatic traces.
+The analysis evaluates all images. The **Excluded** section holds images with insufficient evidence for a pair of continuous stripes, a visible yellow midline, or enough classified pixels on both sides. The pilot used visually placed guide points. The published pipeline estimates all three traces automatically. The overlays have been visually spot-checked. Pose, lighting, overlapping larvae, and indistinct stripes can affect the automatic traces.
 
 ### Review dorsal exclusions
 
@@ -78,7 +78,7 @@ python -m http.server 8000 --directory docs
 
 Visit `http://localhost:8000`. The build validates image IDs, states, and image availability; writes website JSON and CSV from the reviewed upload; and regenerates counts and tests. No image generation or classifier inference is needed. `docs/` is a self-contained static site with bundled JPG images.
 
-`source/` preserves the original inventory, provisional calls, and color-QC script. Optional `python source/build_data.py` reconstructs initial calls into separate `source/reconstructed_initial_*` files; it never overwrites the reviewed baseline. Heuristic color fractions use a fixed central rectangle, not anatomical segmentation, and did not determine phenotype calls. These metrics and gradient energy are audit aids, not a validated classifier. Image hashes refer to bundled display images.
+The `source/inventory.json` file lists the bundled photographs. The reviewed CSV also provides image hashes, central-crop color fractions, and image gradient energy for quality checks. These metrics did not determine the phenotype calls.
 
 ## Publishing
 
