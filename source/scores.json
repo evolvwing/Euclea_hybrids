@@ -1,1898 +1,1898 @@
 {
   "0": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "1": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "2": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "3": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "4": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "5": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "6": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "7": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "8": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "9": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "10": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "11": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "12": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "13": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "14": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "15": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "16": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "17": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "18": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "19": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "20": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "21": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "22": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "23": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "24": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "25": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "26": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "27": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "28": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "29": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "30": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "31": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "32": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "33": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "34": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "35": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "36": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "37": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "38": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "39": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "40": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "41": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "42": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "43": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "44": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "45": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "46": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "47": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "48": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "49": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "50": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "51": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "52": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "53": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "54": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "55": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "56": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "57": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "58": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "59": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "60": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "61": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "62": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "63": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "64": {
     "crimson": "0",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "65": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "66": {
     "crimson": "0",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "67": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "68": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "69": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "70": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "71": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "72": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "73": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "74": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "75": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "76": {
     "crimson": "0",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "77": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "78": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "79": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "80": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "81": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "82": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "83": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "84": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "85": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "86": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "87": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "88": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "89": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "90": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "91": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "92": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "93": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "94": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "95": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "96": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "97": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "98": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "99": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "100": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "101": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "102": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "103": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "104": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "105": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "106": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "107": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "108": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "109": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "110": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "111": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "112": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "113": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "114": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "115": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "116": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "117": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "118": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "119": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "120": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "121": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "122": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "123": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "124": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "125": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "126": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "127": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "128": {
     "crimson": "1",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "129": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "130": {
     "crimson": "0",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "131": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "132": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "133": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "134": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "135": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "136": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "137": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "138": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "139": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "140": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "141": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "142": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "143": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "144": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "145": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "146": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "147": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "148": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "149": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "150": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "151": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "152": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "153": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "154": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "155": {
     "crimson": "1",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "156": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "157": {
     "crimson": "1",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "158": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "159": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "160": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "161": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "162": {
     "crimson": "1",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "163": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "164": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "165": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "166": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "167": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "168": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "169": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "170": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "171": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "172": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "173": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "174": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "175": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "176": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "177": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "178": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "179": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "180": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "181": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "182": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "183": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "184": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "185": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "186": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "187": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "188": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "189": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "190": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "191": {
     "crimson": "1",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "192": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "193": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "194": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "195": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "196": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "197": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "198": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "199": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "200": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "201": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "202": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "203": {
     "crimson": "1",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "204": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "205": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "206": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "207": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "208": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "209": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "210": {
     "crimson": "1",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "211": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "212": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "213": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "214": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "215": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "216": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "217": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "218": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "219": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "220": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "221": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "222": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "223": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "224": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "225": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "226": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "227": {
     "crimson": "1",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "228": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "229": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "230": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "231": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "232": {
     "crimson": "1",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "233": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "234": {
     "crimson": "1",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "235": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "236": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "237": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "238": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "239": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "240": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "241": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "242": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "243": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "244": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "245": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "246": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "247": {
     "crimson": "A",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "248": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "249": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "250": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "251": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "252": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "253": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "254": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "255": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "256": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "257": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "258": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "259": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "260": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "261": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "262": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "263": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "264": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "265": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "266": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "267": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "268": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "269": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "270": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "271": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "272": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "273": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "274": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "275": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "276": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "277": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "278": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "279": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "280": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "281": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "282": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "283": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "284": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "285": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "286": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "287": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "288": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "289": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "290": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "291": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "292": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "293": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "294": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "295": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "296": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "297": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "298": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "299": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "300": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "301": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "302": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "303": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "304": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "305": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "306": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "307": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "308": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "309": {
     "crimson": "A",
-    "scoli": "A"
+    "scoli_previously_ambiguous": "yes"
   },
   "310": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "311": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "312": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "313": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "314": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "315": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "316": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "317": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "318": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "319": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "320": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "321": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "322": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "323": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "324": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "325": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "326": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "327": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "328": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "329": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "330": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "331": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "332": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "333": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "334": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "335": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "336": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "337": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "338": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "339": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "340": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "341": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "342": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "343": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "344": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "345": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "346": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "347": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "348": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "349": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "350": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "351": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "352": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "353": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "354": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "355": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "356": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "357": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "358": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "359": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "360": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "361": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "362": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "363": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "364": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "365": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "366": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "367": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "368": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "369": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "370": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "371": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "372": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "373": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "374": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "375": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "376": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "377": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "378": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "379": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "380": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "381": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "382": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "383": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "384": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "385": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "386": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "387": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "388": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "389": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "390": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "391": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "392": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "393": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "394": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "395": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "396": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "397": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "398": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "399": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "400": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "401": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "402": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "403": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "404": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "405": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "406": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "407": {
     "crimson": "1",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "408": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "409": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "410": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "411": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "412": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "413": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "414": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "415": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "416": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "417": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "418": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "419": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "420": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "421": {
     "crimson": "1",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "422": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "423": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "424": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "425": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "426": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "427": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "428": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "429": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "430": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "431": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "432": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "433": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "434": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "435": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "436": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "437": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "438": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "439": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "440": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "441": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "442": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "443": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "444": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "445": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "446": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "447": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "448": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "449": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "450": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "451": {
     "crimson": "0",
-    "scoli": "0"
+    "scoli_previously_ambiguous": ""
   },
   "452": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "453": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "454": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "455": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "456": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "457": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "458": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "459": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "460": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "461": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "462": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "463": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "464": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "465": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "466": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "467": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "468": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "469": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "470": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "471": {
     "crimson": "A",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "472": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   },
   "473": {
     "crimson": "0",
-    "scoli": "1"
+    "scoli_previously_ambiguous": ""
   }
 }

@@ -1,18 +1,25 @@
-"""Publish the reviewed CSV verbatim and derive website data and segregation tests."""
-import csv, json, shutil
+"""Build the photo review, automated color estimates, and crimson segregation tests."""
+import csv, json
 from pathlib import Path
 from collections import Counter
 from scipy.stats import chisquare
+from quantify_tubercles import quantify
 ROOT = Path(__file__).resolve().parents[1]
 source = ROOT/'data/larval_color_scores_reviewed.csv'
 with source.open(newline='') as f:
     rows = list(csv.DictReader(f))
 assert len(rows) == len({r['image_id'] for r in rows}), 'Duplicate image IDs'
 for r in rows:
-    assert r['crimson'] in ('0','1','A') and r['scoli'] in ('0','1','A')
+    assert r['crimson'] in ('0','1','A') and r['scoli_previously_ambiguous'] in ('','yes')
     assert (ROOT/'docs/assets'/f"{r['image_id']}.jpg").is_file()
+batches = quantify(rows, ROOT/'docs/assets')
+for batch, overlay in batches.items():
+    (ROOT/'docs'/f'tubercle-masks-{batch}.json').write_text(json.dumps(overlay, separators=(',', ':')))
 (ROOT/'docs/data.json').write_text(json.dumps(rows, ensure_ascii=False))
-shutil.copyfile(source, ROOT/'docs/larval_color_scores.csv')
+with (ROOT/'docs/larval_color_scores.csv').open('w', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=rows[0].keys())
+    writer.writeheader()
+    writer.writerows(rows)
 
 def write(name, records):
     with (ROOT/'analysis'/name).open('w', newline='') as f:
