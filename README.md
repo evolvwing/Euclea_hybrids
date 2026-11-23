@@ -1,6 +1,6 @@
-# Euclea_Larvae
+# Euclea_hybrids
 
-**[Open the interactive contact sheets](https://evolvwing.github.io/Euclea_Larvae/)**
+**[Open the interactive contact sheets](https://evolvwing.github.io/Euclea_hybrids/)**
 
 Larval color phenotyping in *Euclea incisa*, *E. incisa × E. delphinii* F1 hybrids, F2 broods, and backcrosses. Includes 474 cropped photographs, editable contact sheets, phenotype calls, and reproducible segregation analyses.
 

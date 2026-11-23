@@ -2,7 +2,7 @@ const $=id=>document.getElementById(id);
 const requestedTrait=new URLSearchParams(location.search).get('trait');
 const trait=['dorsal','scoli'].includes(requestedTrait)?'dorsal':'crimson';
 const dorsalLines=trait==='dorsal';
-const labels={crimson:'Crimson dorsal patches',dorsal:'Dorsal orange lines'};
+const labels={crimson:'Larval dorsal crimson patches',dorsal:'Larval dorsal orange lines'};
 const states={'0':'Absent','1':'Present','A':'Ambiguous'};
 const key='euclea-larvae-reviewed-20261122-v1';let edits={};try{edits=JSON.parse(localStorage.getItem(key)||'{}')}catch{}
 const initialEdits=JSON.parse(JSON.stringify(edits));
