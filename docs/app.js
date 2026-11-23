@@ -1,7 +1,8 @@
 const $=id=>document.getElementById(id);
-const trait=new URLSearchParams(location.search).get('trait')==='scoli'?'scoli':'crimson';
-const tubercles=trait==='scoli';
-const labels={crimson:'Crimson dorsal patches',scoli:'Orange-pink tubercles'};
+const requestedTrait=new URLSearchParams(location.search).get('trait');
+const trait=['dorsal','scoli'].includes(requestedTrait)?'dorsal':'crimson';
+const dorsalLines=trait==='dorsal';
+const labels={crimson:'Crimson dorsal patches',dorsal:'Dorsal orange lines'};
 const states={'0':'Absent','1':'Present','A':'Ambiguous'};
 const key='euclea-larvae-reviewed-20261122-v1';let edits={};try{edits=JSON.parse(localStorage.getItem(key)||'{}')}catch{}
 const initialEdits=JSON.parse(JSON.stringify(edits));
@@ -12,14 +13,14 @@ const score=r=>edits[r.image_id]?.crimson??r.crimson;
 const broodOrder=['E. incisa','F1 (line unresolved)','F2-1','F2-2','F2-3','F2-4','F2-5','BC-1','BC-2','BC-3'];
 $(trait+'Tab').classList.add('active');$('traitTitle').textContent=labels[trait];
 $('definition').textContent=trait==='crimson'?'Localized paired crimson patches at the repeated dorsal positions. Score faint patches as present, including those within orange-pink bands.':'Photos are ranked by orange-pink coverage within each brood. Open a ranked photo to see the scored pixels.';
-for(const id of ['crimsonInfo','crimsonFilter','crimsonEditor','crimsonViewerNote','autosave']) $(id).hidden=tubercles;
-document.querySelector('.saveNote').hidden=tubercles;
-for(const id of ['scoliSort','scoliDetails']) $(id).hidden=!tubercles;
+for(const id of ['crimsonInfo','crimsonFilter','crimsonEditor','crimsonViewerNote','autosave']) $(id).hidden=dorsalLines;
+document.querySelector('.saveNote').hidden=dorsalLines;
+for(const id of ['dorsalSort','dorsalDetails']) $(id).hidden=!dorsalLines;
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
-function render(){const q=$('search').value.toLowerCase();const shown=data.filter(r=>(!$('brood').value||r.brood===$('brood').value)&&(tubercles||!$('state').value||initialScore(r)===$('state').value)&&(!q||(r.filename+' '+r.image_id).toLowerCase().includes(q)));
+function render(){const q=$('search').value.toLowerCase();const shown=data.filter(r=>(!$('brood').value||r.brood===$('brood').value)&&(dorsalLines||!$('state').value||initialScore(r)===$('state').value)&&(!q||(r.filename+' '+r.image_id).toLowerCase().includes(q)));
  visibleRows=shown;updateCounts();visibleCards.clear();
  $('gallery').replaceChildren();
- if(tubercles){renderTubercles(shown);return;}
+ if(dorsalLines){renderDorsalLines(shown);return;}
  for(const brood of broodOrder){const members=shown.filter(r=>r.brood===brood);if(!members.length)continue;const section=el('section','group');section.append(el('h2','',brood));
  for(const state of ['0','1','A']){const group=members.filter(r=>initialScore(r)===state).sort((a,b)=>a.filename.localeCompare(b.filename));if(!group.length)continue;
  section.append(el('h3','stateheading',`${state} · ${states[state]} — ${group.length} image views`));const grid=el('div','grid');
@@ -27,20 +28,20 @@ function render(){const q=$('search').value.toLowerCase();const shown=data.filte
  for(const value of ['0','1','A']){const button=el('button','statebutton',value==='A'?'Ambiguous':value);button.type='button';button.setAttribute('aria-label',`${states[value]}: ${r.filename}`);button.dataset.state=value;button.setAttribute('aria-pressed',String(score(r)===value));button.title=states[value];button.onclick=()=>{edits[r.image_id]={crimson:value};const ok=persist();updateCard(r);updateCounts();$('autosave').textContent=ok?`${r.filename}: ${states[value]} — saved in this browser.`:'Browser storage unavailable. Export the CSV now to retain your edits.';};buttons.append(button)}meta.append(buttons);card.append(meta);grid.append(card);visibleCards.set(r.image_id,{stateBadge,editedBadge,buttons});updateCard(r)}section.append(grid)}$('gallery').append(section)}
 }
 function updateCounts(){
- if(tubercles){
-  const excluded=visibleRows.filter(r=>r.scoli_exclusion_reason).length;
+ if(dorsalLines){
+  const excluded=visibleRows.filter(r=>r.dorsal_exclusion_reason).length;
   $('stats').textContent=`${visibleRows.length-excluded} ranked · ${excluded} excluded`;
   return;
  }
  const counts=Object.fromEntries(['0','1','A'].map(s=>[s,visibleRows.filter(r=>score(r)===s).length]));$('stats').textContent=`${visibleRows.length} image views · ${counts['0']} absent · ${counts['1']} present · ${counts.A} ambiguous`}
 function updateCard(r){const c=visibleCards.get(r.image_id);if(!c)return;const state=score(r);c.stateBadge.className='badge s'+state;c.stateBadge.textContent=`${state} · ${states[state]}`;c.editedBadge.style.visibility=edits[r.image_id]?.crimson!==undefined?'visible':'hidden';for(const b of c.buttons.children)b.setAttribute('aria-pressed',String(b.dataset.state===state))}
-function renderTubercles(rows){
- const ranked=rows.filter(r=>!r.scoli_exclusion_reason);
+function renderDorsalLines(rows){
+ const ranked=rows.filter(r=>!r.dorsal_exclusion_reason);
  const direction=$('sort').value==='asc'?1:-1;
- ranked.sort((a,b)=>direction*(Number(a.scoli_orange_pink_percent)-Number(b.scoli_orange_pink_percent))
+ ranked.sort((a,b)=>direction*(Number(a.dorsal_orange_pink_percent)-Number(b.dorsal_orange_pink_percent))
   ||a.filename.localeCompare(b.filename));
  const groups=broodOrder.map(brood=>[brood,ranked.filter(row=>row.brood===brood)]);
- groups.push(['Excluded',rows.filter(row=>row.scoli_exclusion_reason)]);
+ groups.push(['Excluded',rows.filter(row=>row.dorsal_exclusion_reason)]);
  for(const [title,items] of groups){
   if(!items.length)continue;
   const section=el('section','group');
@@ -58,8 +59,8 @@ function renderTubercles(rows){
    button.onclick=()=>open(row);
    const meta=el('div','meta',row.filename);
    meta.append(el('div','brood-label',row.brood));
-   if(row.scoli_exclusion_reason){
-    meta.append(el('p','note',row.scoli_exclusion_reason));
+   if(row.dorsal_exclusion_reason){
+    meta.append(el('p','note',row.dorsal_exclusion_reason));
    }
    card.append(button,meta);
    grid.append(card);
@@ -67,6 +68,10 @@ function renderTubercles(rows){
   section.append(grid);
   $('gallery').append(section);
  }
+}
+
+function decodeOverlay(encoded){
+ return new DataView(Uint8Array.from(atob(encoded),char=>char.charCodeAt(0)).buffer);
 }
 
 const overlayRequests=new Map();
@@ -84,30 +89,41 @@ $('toggleMask').onclick=async()=>{
   return;
  }
  const row=selected;
- const batch=Math.floor((Number(row.image_id.split('-').at(-1))-1)/80);
+ const batch=Math.floor((Number(row.image_id.split('-').at(-1))-1)/32);
  $('maskStatus').textContent='Loading overlay…';
  try{
   if(!overlayRequests.has(batch)) {
-   overlayRequests.set(batch,fetch(`tubercle-masks-${batch}.json`).then(response=>{
+   overlayRequests.set(batch,fetch(`dorsal-line-masks-${batch}.json`).then(response=>{
     if(!response.ok)throw new Error('Overlay unavailable');
     return response.json();
    }));
   }
-  const {width,height,masks}=await overlayRequests.get(batch);
+  const {width,height,masks,midlines}=await overlayRequests.get(batch);
   if(request!==overlayRequest)return;
   const canvas=$('mask');
   canvas.width=width;
   canvas.height=height;
   const context=canvas.getContext('2d');
   const overlay=context.createImageData(width,height);
-  const runs=atob(masks[row.image_id]);
-  for(let i=0;i<runs.length;i+=4){
-   const start=runs.charCodeAt(i)+256*runs.charCodeAt(i+1);
-   const end=start+runs.charCodeAt(i+2);
-   const rgba=runs.charCodeAt(i+3)===1?[255,38,116,170]:[174,238,45,160];
+  const runs=decodeOverlay(masks[row.image_id]);
+  for(let i=0;i<runs.byteLength;i+=6){
+   const start=runs.getUint32(i,true);
+   const end=start+runs.getUint8(i+4);
+   const rgba=runs.getUint8(i+5)===1?[255,38,116,170]:[174,238,45,160];
    for(let pixel=start;pixel<end;pixel++)overlay.data.set(rgba,4*pixel);
   }
   context.putImageData(overlay,0,0);
+  const [top,encodedTrace]=midlines[row.image_id];
+  const trace=decodeOverlay(encodedTrace);
+  context.beginPath();
+  context.moveTo(trace.getUint16(0,true),top);
+  for(let i=2;i<trace.byteLength;i+=2)context.lineTo(trace.getUint16(i,true),top+i/2);
+  context.strokeStyle='#19342b';
+  context.lineWidth=3;
+  context.stroke();
+  context.strokeStyle='#fff170';
+  context.lineWidth=1.25;
+  context.stroke();
   $('maskStatus').textContent='';
   setOverlayVisible(true);
  }catch{
@@ -127,10 +143,10 @@ function open(r){
  $('viewBrood').textContent=r.brood;
  $('ref').textContent=r.reference_note;
  $('saved').textContent='';
- if(tubercles){
-  $('toggleMask').hidden=Boolean(r.scoli_exclusion_reason);
-  $('scoliExclusion').hidden=!r.scoli_exclusion_reason;
-  $('scoliExclusion').textContent=r.scoli_exclusion_reason ? `Excluded · ${r.scoli_exclusion_reason}` : '';
+ if(dorsalLines){
+  $('toggleMask').hidden=Boolean(r.dorsal_exclusion_reason);
+  $('dorsalExclusion').hidden=!r.dorsal_exclusion_reason;
+  $('dorsalExclusion').textContent=r.dorsal_exclusion_reason ? `Excluded · ${r.dorsal_exclusion_reason}` : '';
  }else{
   $('editCrimson').value=score(r);
  }
@@ -142,4 +158,4 @@ $('save').onclick=()=>{edits[selected.image_id]={crimson:$('editCrimson').value}
 $('restore').onclick=()=>{delete edits[selected.image_id];persist();$('editCrimson').value=selected.crimson;$('saved').textContent='Original draft scores restored.';updateCard(selected);updateCounts()};
 for(const id of ['brood','state','sort','search'])$(id).addEventListener('input',render);
 $('export').onclick=()=>{const rows=data.map(r=>{const x={...r};x.crimson=score(r);x.crimson_state=x.crimson==='A'?'':x.crimson;if(edits[r.image_id]?.crimson!==undefined)x.crimson_status=x.crimson==='A'?'ambiguous':'user_reviewed';return x});const keys=Object.keys(rows[0]);const esc=v=>'"'+String(v??'').replaceAll('"','""')+'"';const csv=[keys.map(esc).join(','),...rows.map(r=>keys.map(k=>esc(r[k])).join(','))].join('\r\n');const u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=el('a');a.href=u;a.download='larval_color_scores_reviewed.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
-fetch('data.json').then(r=>{if(!r.ok)throw Error('Data could not be loaded');return r.json()}).then(rows=>{data=rows;for(const b of broodOrder){if(data.some(r=>r.brood===b)){const o=el('option','',b);o.value=b;$('brood').append(o)}}render()}).catch(e=>{$('stats').textContent=e.message});
+fetch('data.json?v=dorsal-lines-1').then(r=>{if(!r.ok)throw Error('Data could not be loaded');return r.json()}).then(rows=>{data=rows;for(const b of broodOrder){if(data.some(r=>r.brood===b)){const o=el('option','',b);o.value=b;$('brood').append(o)}}render()}).catch(e=>{$('stats').textContent=e.message});
