@@ -1,0 +1,16 @@
+{
+  "record": "record/Fig2_F1-broods_v2.ai",
+  "sha256": "cb69d925cd3bb260e16e1bb455e960df5fe06bc32966d7290b6fb222dcd1e3e0",
+  "status": "Current native Illustrator v2 from Drive",
+  "date": "2026-11-23",
+  "source_modified_utc": "2026-11-23T22:03:07.701Z",
+  "panel_order": {
+    "A": "Crossing design and timeline",
+    "B": "Egg production",
+    "C": "Cocoon outcomes and adult sex ratios",
+    "D": "Egg hatch to cocoon duration",
+    "E": "Male diapause and forewing size",
+    "F": "Female diapause and forewing size"
+  },
+  "source_filename": "Fig2_F1-broods_v2.ai"
+}

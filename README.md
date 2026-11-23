@@ -4,6 +4,10 @@
 
 Larval color phenotyping in *Euclea incisa*, *E. incisa × E. delphinii* F1 hybrids, F2 broods, and backcrosses. Includes a developmental contact sheet with 308 displayed F1 larval crops, plus 474 phenotype-review photographs, phenotype calls, and reproducible segregation analyses.
 
+## F1 Brood Plots
+
+[Figure 2, plotting workflow, and style guide](f1-brood-plots/README.md) for the crossing design, egg production, cocoon outcomes, development time, diapause, and forewing size.
+
 ## F1 hybrid larvae (L1 to L8)
 
 The first contact sheet documents larvae of *E. incisa* × *E. delphinii* from instars L1 through L8. Photographs are grouped by instar, with a filter for L1 through L8. Counts refer to image views. The same larva may appear in multiple frames.
